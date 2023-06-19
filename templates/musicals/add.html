@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="/add" method ="post">
+        {% csrf_token %}
+        <label for="audioInput">Audio</label>
+        <input type="file" id="audioInput" name="audioInput" accept="audio/*">
+        <br>
+        <label for="title">title</label>
+        <input type="text" name="title" id="title" placeholder="Enter title" required>
+        <br>
+        <label for="type">Type</label>
+        <select id="type" name="type" onchange="handleProtected()">
+            <option value="private">Private</option>
+            <option value="public">Public</option>
+            <option value="protected">Protected</option>
+        </select>
+        <div id="emailFieldContainer" style="display: none;">
+            <label for="emails">Enter Email Addresses (separated by new line):</label>
+            <textarea id="emails" name="emails" rows="4" cols="50"></textarea>
+          </div>
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+    <script>
+        function handleProtected() {
+            var type = document.getElementById("type").value;
+            if (type == "protected") {
+                document.getElementById("emailFieldContainer").style.display = "block";
+            } else {
+                document.getElementById("emailFieldContainer").style.display = "none";
+            }
+        }
+    </script> -->
+    <form action="/add" method ="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        
+        <button type="submit">Upload</button>
+</body>
+</html>
